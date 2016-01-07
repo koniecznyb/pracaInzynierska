@@ -1,17 +1,34 @@
 \chapter{Wstęp}
 \label{cha:wstep}
 
-Wstęp
+W ostatniej dekadzie można zauważyć zwiększone zainteresowanie rozwiązaniami z dziedziny
+sztucznej inteligencji. Innowacyjne pomysły z użyciem tych algorytmów pozwalają nie tylko na interpretacje ogromnych 
+ilości danych, których człowiek nie jest w stanie przetworzyć ale również, między innymi na rozwój 
+autonomicznych pojazdów, jeżdżących bez nadzoru kierowcy.\\
+Według \cite{mccarthy2007artificial} sztuczną inteligencją możemy nazwać ``badanie i rozwój inteligentnych maszyn, 
+w szczególności programów komputerowych''.\\
+Inteligentne zachowanie agenta możemy zdefiniować, gdy agent\cite{L.:2010:AIF:1809744}
+\begin{itemize*}
+ \item dostosowuje swoje zachowanie do aktualnych warunków i celów,
+ \item ma zdolność zmiany otoczenia i celów,
+ \item uczy się z doświadczenia,
+ \item wykonuje odpowiednie do swoich ograniczeń akcję.
+\end{itemize*}
 %---------------------------------------------------------------------------
 
 \section{Cele pracy}
 \label{sec:celePracy}
+
+Celem pracy jest implementacja samouczącego agenta. Agent wykorzystując algorytmy uczenia ze wzmacnianiem 
+(Reinforcement Learning) wyciąga wnioski z podejmowanych akcji i dostosowuje swoje zachowanie. 
 
 
 %---------------------------------------------------------------------------
 
 \section{Zawartość pracy}
 \label{sec:zawartoscPracy}
+
+Symulacja graficzna przedstawiająca agenta w środowisku.
 
 
 

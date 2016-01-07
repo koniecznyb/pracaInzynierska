@@ -1,0 +1,245 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{mccarthy2007artificial}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {McCarthy}{M.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MJ1}
+  \strng{fullhash}{MJ1}
+  \field{pages}{38}
+  \field{title}{What is artificial intelligence}
+  \field{journaltitle}{URL: http://www-formal. stanford. edu/jmc/whatisai.
+  html}
+  \field{year}{2007}
+\endentry
+
+\entry{L.:2010:AIF:1809744}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {L.}{L.}%
+     {Poole~David}{P.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {K.}{K.}%
+     {Mackworth~Alan}{M.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \strng{namehash}{LPDKMA1}
+  \strng{fullhash}{LPDKMA1}
+  \field{isbn}{0521519004, 9780521519007}
+  \field{title}{Artificial Intelligence: Foundations of Computational Agents}
+  \list{location}{1}{%
+    {New York, NY, USA}%
+  }
+  \field{year}{2010}
+\endentry
+
+\entry{domingos2012few}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Domingos}{D.}%
+     {Pedro}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{DP1}
+  \strng{fullhash}{DP1}
+  \field{number}{10}
+  \field{pages}{78\bibrangedash 87}
+  \field{title}{A few useful things to know about machine learning}
+  \field{volume}{55}
+  \field{journaltitle}{Communications of the ACM}
+  \field{year}{2012}
+\endentry
+
+\entry{firte2010spam}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Firte}{F.}%
+     {Loredana}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lemnaru}{L.}%
+     {Camelia}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Potolea}{P.}%
+     {Rodica}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{FLLCPR1}
+  \strng{fullhash}{FLLCPR1}
+  \field{booktitle}{Proceedings of the 2010 IEEE 6th International Conference
+  on Intelligent Computer Communication and Processing}
+  \field{pages}{27\bibrangedash 33}
+  \field{title}{Spam detection filter using KNN algorithm and resampling}
+  \field{year}{2010}
+\endentry
+
+\entry{marsono2008binary}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Marsono}{M.}%
+     {Muhammad~N}{M.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {El-Kharashi}{E.-K.}%
+     {M~Watheq}{M.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gebali}{G.}%
+     {Fayez}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IET}%
+  }
+  \strng{namehash}{MMNEKMWGF1}
+  \strng{fullhash}{MMNEKMWGF1}
+  \field{number}{1}
+  \field{pages}{56\bibrangedash 62}
+  \field{title}{Binary LNS-based na{\"\i}ve Bayes inference engine for spam
+  control: noise analysis and FPGA implementation}
+  \field{volume}{2}
+  \field{journaltitle}{Computers \& Digital Techniques, IET}
+  \field{year}{2008}
+\endentry
+
+\entry{lakshmi2010spam}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Lakshmi}{L.}%
+     {R~Deepa}{R.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Radha}{R.}%
+     {N}{N}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{LRDRN1}
+  \strng{fullhash}{LRDRN1}
+  \field{booktitle}{Proceedings of the 1st Amrita ACM-W Celebration on Women in
+  Computing in India}
+  \field{pages}{66}
+  \field{title}{Spam classification using supervised learning techniques}
+  \field{year}{2010}
+\endentry
+
+\entry{koprinska2007learning}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Koprinska}{K.}%
+     {Irena}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Poon}{P.}%
+     {Josiah}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Clark}{C.}%
+     {James}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chan}{C.}%
+     {Jason}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{KI+1}
+  \strng{fullhash}{KIPJCJCJ1}
+  \field{number}{10}
+  \field{pages}{2167\bibrangedash 2187}
+  \field{title}{Learning to classify e-mail}
+  \field{volume}{177}
+  \field{journaltitle}{Information Sciences}
+  \field{year}{2007}
+\endentry
+
+\entry{li2014towards}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Li}{L.}%
+     {Wenjuan}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Meng}{M.}%
+     {Weizhi}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tan}{T.}%
+     {Zhiyuan}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Xiang}{X.}%
+     {Yang}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{LW+1}
+  \strng{fullhash}{LWMWTZXY1}
+  \field{booktitle}{Trust, Security and Privacy in Computing and Communications
+  (TrustCom), 2014 IEEE 13th International Conference on}
+  \field{pages}{174\bibrangedash 181}
+  \field{title}{Towards designing an email classification system using
+  multi-view based semi-supervised learning}
+  \field{year}{2014}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

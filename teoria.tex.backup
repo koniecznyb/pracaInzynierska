@@ -1,5 +1,5 @@
-\chapter{Ogólny rozdział teoretyczny}
-\label{cha:ogolnyrozdzialteoretyczny}
+\chapter{Teoria}
+\label{cha:teoria}
 
 Uczenie maszynowe jest metodą analizy danych, która automatyzuje budowę modelu analitycznego na podstawie nauki z 
 danych. W wielu zastosowaniach ich użycie jest znacznie bardziej efektywne od manualnego programowania, w wyniku czego 

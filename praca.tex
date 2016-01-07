@@ -20,6 +20,7 @@
 % --- < bibliografia > ---
 
 \usepackage[
+backend=bibtex,
 style=numeric,
 sorting=none,
 %
@@ -43,7 +44,7 @@ maxbibnames=3,
 % Ponieważ `csquotes` nie posiada polskiego stylu, można skorzystać z mocno zbliżonego stylu chorwackiego.
 \DeclareQuoteAlias{croatian}{polish}
 
-\addbibresource{bibliografia.bib}
+\addbibresource{praca.bib}
 
 % Nie wyświetlaj wybranych pól.
 %\AtEveryBibitem{\clearfield{note}}
@@ -90,16 +91,18 @@ maxbibnames=3,
 % ------------------------
 % --- < tabele > ---
 
+\usepackage{mdwlist}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{makecell}
+\usepackage{graphicx}
 \usepackage[flushleft]{threeparttable}
 
 % defines the X column to use m (\parbox[c]) instead of p (`parbox[t]`)
 \newcolumntype{C}[1]{>{\hsize=#1\hsize\centering\arraybackslash}X}
-
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 %---------------------------------------------------------------------------
 
@@ -160,9 +163,10 @@ maxbibnames=3,
 \clearpage
 
 \include{wstep}
+\include{omowienie}
 \include{teoria}
-\include{implementacja}
-\include{uwagi}
+%\include{implementacja}
+%\include{uwagi}
 
 
 %\include{rozdzial1}
