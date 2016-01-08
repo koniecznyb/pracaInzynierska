@@ -3,7 +3,7 @@
 
 W ostatniej dekadzie można zauważyć zwiększone zainteresowanie rozwiązaniami z dziedziny
 sztucznej inteligencji. Innowacyjne pomysły z użyciem tych algorytmów pozwalają nie tylko na interpretacje ogromnych 
-ilości danych, których człowiek nie jest w stanie przetworzyć ale również, między innymi na rozwój 
+ilości danych, których człowiek nie jest w stanie przetworzyć ale również, między innymi, na rozwój 
 autonomicznych pojazdów, jeżdżących bez nadzoru kierowcy.\\
 Według \cite{mccarthy2007artificial} sztuczną inteligencją możemy nazwać ``badanie i rozwój inteligentnych maszyn, 
 w szczególności programów komputerowych''.\\
@@ -14,31 +14,43 @@ Inteligentne zachowanie agenta możemy zdefiniować, gdy agent\cite{L.:2010:AIF:
  \item uczy się z doświadczenia,
  \item wykonuje odpowiednie do swoich ograniczeń akcję.
 \end{itemize*}
+Wykorzystując powyższe definicję, sztuczną inteligencje określamy jako dziedzinę naukową zajmującą się badaniem, 
+rozwojem i implementacją programów i maszyn wykazujących cechy inteligencji, tzn. takie które ucząc się z 
+doświadczenia, będąc zmiennym w stosunku do otaczającego ich otoczenia i warunków dążą do wykonania swoich celów 
+uwzględniając obowiązujące je ograniczenia. 
 %---------------------------------------------------------------------------
 
 \section{Cele pracy}
 \label{sec:celePracy}
 
-Celem pracy jest implementacja samouczącego agenta. Agent wykorzystując algorytmy uczenia ze wzmacnianiem 
-(Reinforcement Learning) wyciąga wnioski z podejmowanych akcji i dostosowuje swoje zachowanie. 
-
-
-%---------------------------------------------------------------------------
-
-\section{Zawartość pracy}
-\label{sec:zawartoscPracy}
-
-Symulacja graficzna przedstawiająca agenta w środowisku.
+Celem pracy jest opis i implementacja inteligentnego agenta. Agent wykorzystując algorytmy uczenia ze wzmocnieniem 
+wyciąga wnioski z podejmowanych akcji i dostosowuje swoje zachowanie. Aby lepiej zaprezentować wyniki jego działania,
+stworzone zostanie proste środowisko graficzne, które będzie przedstawiać wyniki przeprowadzanych przez robota wyborów.
+\\
+W pracy zostanie wyjaśnione pojęcie uczenia maszynowego i podstawowe podejścia do rozwiązania problemów z tej dziedziny.
+Dzięki temu możliwe będzie podsumowanie różnic między uczeniem ze wzmocnieniem, a pozostałymi podejściami do uczenia 
+maszynowego.
 
 
 
-
-
-
-
-
-
-
+Wstęp
+  cele pracy
+  zawartość pracy
+Teoria	
+  uczenie maszynowego
+  podejscia uczenia maszynowego
+    supervised
+    unsupervised
+    reinforcement
+  przyklady zastosowania
+  podsumowanie
+implementacja
+  opis implementacji
+  wybor algorytmow
+    q-learning
+    sarsa
+  
+  symulacja graficzna
 
 
 
