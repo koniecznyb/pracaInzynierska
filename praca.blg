@@ -3,8 +3,9 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: praca.aux
 The style file: biblatex.bst
 A level-1 auxiliary file: wstep.aux
-A level-1 auxiliary file: omowienie.aux
 A level-1 auxiliary file: teoria.aux
+A level-1 auxiliary file: implementacja.aux
+A level-1 auxiliary file: podsumowanie.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -21,44 +22,44 @@ Database file #2: praca.bib
 Biblatex version: 2.8
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-You've used 9 entries,
+You've used 10 entries,
             6047 wiz_defined-function locations,
-            1184 strings with 9673 characters,
-and the built_in function-call counts, 26529 in all, are:
-= -- 1089
-> -- 916
-< -- 227
-+ -- 327
-- -- 325
-* -- 1867
-:= -- 1756
+            1191 strings with 9837 characters,
+and the built_in function-call counts, 29634 in all, are:
+= -- 1217
+> -- 1024
+< -- 256
++ -- 362
+- -- 363
+* -- 2084
+:= -- 1938
 add.period$ -- 0
-call.type$ -- 9
-change.case$ -- 130
+call.type$ -- 10
+change.case$ -- 146
 chr.to.int$ -- 34
-cite$ -- 16
-duplicate$ -- 2905
-empty$ -- 2756
-format.name$ -- 560
-if$ -- 6010
+cite$ -- 18
+duplicate$ -- 3253
+empty$ -- 3083
+format.name$ -- 626
+if$ -- 6721
 int.to.chr$ -- 0
-int.to.str$ -- 24
+int.to.str$ -- 27
 missing$ -- 0
-newline$ -- 239
-num.names$ -- 394
-pop$ -- 2610
+newline$ -- 263
+num.names$ -- 443
+pop$ -- 2928
 preamble$ -- 1
-purify$ -- 164
+purify$ -- 184
 quote$ -- 0
-skip$ -- 1587
+skip$ -- 1779
 stack$ -- 0
-substring$ -- 694
-swap$ -- 949
-text.length$ -- 197
+substring$ -- 773
+swap$ -- 1060
+text.length$ -- 220
 text.prefix$ -- 1
 top$ -- 1
-type$ -- 330
+type$ -- 368
 warning$ -- 0
-while$ -- 182
+while$ -- 199
 width$ -- 0
-write$ -- 229
+write$ -- 252

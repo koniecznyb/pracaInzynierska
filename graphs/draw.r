@@ -30,9 +30,9 @@ library(cluster)
 data(iris)
 fit <- kmeans(iris, 2)
 
-clusplot(iris, fit$cluster, color=TRUE, shade=TRUE, 
-  	labels=2, lines=0)
-plotcluster(iris, fit$cluster)
+clusplot(mydata, fit$cluster, color=TRUE, shade=TRUE, 
+  	labels=2, lines=0, main="algorytm k-means, 3 klastry danych")
+plotcluster(mydata, fit$cluster)
 
 
 library(ggvis)
@@ -58,3 +58,13 @@ ggplot(np_graph) + geom_point(aes(x = C1, y = C2, colour = C1 >0)) +
     \caption{Opracowanie własne}
     \label{fig:plotsepalwidthsepallength}
 \end{figure}
+
+
+
+
+
+wss <- (nrow(mydata)-1)*sum(apply(mydata,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(mydata, 
+  	centers=i)$withinss)
+plot(1:15, wss, type="b", xlab="Number of Clusters",
+  ylab="Within groups sum of squares")

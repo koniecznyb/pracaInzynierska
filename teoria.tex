@@ -1,11 +1,7 @@
-\chapter{Sztuczna inteligencja - rozdział teoretyczny}
+\chapter{Uczenie maszynowe - rozdział teoretyczny}
 \label{cha:ogolnyrozdzialteoretyczny}
 
 Jednym z najistotniejszych zagadnień z dziedziny sztucznej inteligencji jest uczenie maszynowe. 
-
-
-\section{Uczenie maszynowe}
-
 Uczenie maszynowe jest metodą analizy danych, która automatyzuje budowę modelu analitycznego na podstawie nauki z 
 danych. W wielu zastosowaniach ich użycie jest znacznie bardziej efektywne od manualnego programowania, w wyniku czego 
 uczenie maszynowe znalazło szerokie zastosowanie w informatyce i innych dziedzinach.
@@ -61,29 +57,20 @@ negatywny wpływ na wynik działania algorytmu.
 
 Podobnie jak w uczeniu nadzorowanym, algorytmy uczenia nienadzorowanego wyznaczają funkcje na podstawie danych 
 wejściowych, jednak są w stanie odkryć niewidoczne zależności między nimi. Konsekwencją wynikającą z charakterystyki 
-danych trenujących jest niemożność określenia błędu lub poprawności rozwiązania. Celem działania algorytmu może być na 
-przykład kategoryzowanie informacji (klasteryzacja).
+algorytmów uczenia nadzorowanego jest niemożność określenia błędu lub poprawności rozwiązania. Celem działania 
+algorytmu może być na przykład kategoryzowanie informacji (klasteryzacja).
 
-W odróżnieniu od uczenia nadzorowanego, metody uczenia nienadzorowanego są w stanie wykryć wzorzec w danych wejściowych.
+W odróżnieniu od uczenia nadzorowanego, metody uczenia nienadzorowanego są w stanie wykryć ukryty wzorzec w danych 
+wejściowych.
 
-
-\subsection{Uczenie ze wzmocnieniem}
-\label{subsec:uczeniezewzmocnieniem}
-
-
-
-
-\section{Podsumowanie}
-
-
-\section{Przykład zastosowania algorytmów uczenia maszynowego}
-\label{sec:przykladzastosowaniaalgorytmowuczeniamaszynowego}
-
-Używając jako wejścia informacji dotyczących kwiatów irysów, w przedstawionej poniżej postaci, algorytmy uczenia 
-nienadzorowanego są w stanie przewidzieć gatunek kwiatu (\textit{setosa}, \textit{versicolor},  \textit{virginica}) na 
+Używając jako wejścia informacji dotyczących kwiatów irysów w postaci przedstawionej na listingu \ref{lst:danekwiatow}, 
+algorytmy uczenia 
+nienadzorowanego mogą być zastosowane w celu wywnioskowania gatunku kwiatu (\textit{setosa}, 
+\textit{versicolor},  \textit{virginica}) na 
 podstawie długości i szerokości płatka  (\textit{sepal}) i listka kielichu (\textit{petal}).
 
-\begin{code}[caption=Przykład danych dotyczących kwiatów irysów, label=amb, captionpos=b, belowcaptionskip=4pt]
+\begin{code}[caption=Przykład danych o kwiatach irysów, label={lst:danekwiatow}, captionpos=b, 
+belowcaptionskip=4pt]
     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
 1            5.1         3.5          1.4         0.2     setosa
 2            4.9         3.0          1.4         0.2     setosa
@@ -99,7 +86,7 @@ podstawie długości i szerokości płatka  (\textit{sepal}) i listka kielichu (
 104          6.3         2.9          5.6         1.8  virginica
 \end{code}
 \\\\\\
-Na ryc. ~\ref{fig:plotsepalwidthsepallength}, przedstawione zostało rozmieszczenie gatunków kwiatów w zależności od 
+Na rys. \ref{fig:plotsepalwidthsepallength}, przedstawione zostało rozmieszczenie gatunków kwiatów w zależności od 
 długości i szerokości płatka kwiatu. Wyraźnie widać podział na dwa podstawowe klastry
 \begin{itemize*} 
 \renewcommand{\labelitemi}{$\bullet$}
@@ -107,16 +94,60 @@ długości i szerokości płatka kwiatu. Wyraźnie widać podział na dwa podsta
  \item gatunek versicolor i virginica.
 \end{itemize*}
 
-\begin{figure}[b]
+\begin{figure}[h]
     \centering
     \textbf{Rozmieszczenie kwiatów irysów}\par\medskip
-    \includegraphics[scale=0.7]{plotsepalwidthsepallength}
+    \includegraphics[scale=0.5]{plotsepalwidthsepallength}
     \caption{Populacja kwiatów irysów w zależności od szerokości i długości płatka kwiatu. Źródło: Opracowanie własne}
     \label{fig:plotsepalwidthsepallength}
 \end{figure}
 
+Stosując algorytmy uczenia nienadzorowanego, nie wiemy w jaki sposób klasyfikować dane trenujące. W tym celu możemy 
+wykorzystać algorytm k-means\cite{coates2012learning}, który na podstawie określonych cech grupuje dane w podaną liczbę 
+klastrów.
+Poddając przedstawione dane działaniu algorytmu k-means, uzyskujemy wynik przedstawiony na rys. \ref{fig:cluster2} oraz 
+rys. \ref{fig:cluster3}.
 
 
+\begin{figure}[h!]
+    \centering
+    \textbf{Wynik działania algorytmu k-means}\par\medskip
+    \includegraphics[scale=0.5]{cluster2}
+    \caption{Wynik działania algorytmu klasteryzacji k-means dla 2 klastrów kwiatów irysów w zależności od szerokości i 
+długości płatka kwiatu. Źródło: Opracowanie własne}
+    \label{fig:cluster2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \textbf{Wynik działania algorytmu k-means}\par\medskip
+    \includegraphics[scale=0.4]{cluster3}
+    \caption{Wynik działania algorytmu klasteryzacji k-means dla 3 klastrów kwiatów irysów w zależności od szerokości i 
+długości płatka kwiatu. Źródło: Opracowanie własne}
+    \label{fig:cluster3}
+\end{figure}
+
+
+Na rys. \ref{fig:cluster2} można zaobserwować, że algorytm zadziała z dużą skutecznością rozróżniając pomiędzy dwoma 
+gatunkami dla dwóch klastrów, tj. pomiędzy gatunkiem setosa, a gatunkami versicolor i virginica, jednak algorytm będzie 
+miał problem rozróżnić pomiędzy gatunkami versicolor i virginica.
+W tym celu można zbiór podzielić na trzy klastry jak na rys.\ref{fig:cluster3}, ale nie gwarantuje to 
+wystarczającej skuteczności przydziału. \\
+Tym samym można zaobserwować, że gatunek versicolor i virginica nie są 
+rozróżnialne, używając przedstawionych danych wejściowych.\\
+Rozważając sytuacje, w której dodana by została duża liczba dodatkowych wpisów, różnych od aktualnych danych, 
+można by było zaobserwować pojawienie się kolejnego klastra danych, co oznacza pojawienie się nowego gatunku kwiatu.
+
+
+\subsection{Uczenie ze wzmocnieniem}
+\label{subsec:uczeniezewzmocnieniem}
+
+
+
+
+
+
+\section{Podsumowanie}
 
 
 

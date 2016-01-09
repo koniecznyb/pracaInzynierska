@@ -239,6 +239,30 @@
   \field{year}{2014}
 \endentry
 
+\entry{coates2012learning}{incollection}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Coates}{C.}%
+     {Adam}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ng}{N.}%
+     {Andrew~Y}{A.~Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{CANAY1}
+  \strng{fullhash}{CANAY1}
+  \field{booktitle}{Neural Networks: Tricks of the Trade}
+  \field{pages}{561\bibrangedash 580}
+  \field{title}{Learning feature representations with k-means}
+  \field{year}{2012}
+\endentry
+
 \lossort
 \endlossort
 
