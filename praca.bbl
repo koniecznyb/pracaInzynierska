@@ -263,6 +263,113 @@
   \field{year}{2012}
 \endentry
 
+\entry{abbeel2007application}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Abbeel}{A.}%
+     {Pieter}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Coates}{C.}%
+     {Adam}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Quigley}{Q.}%
+     {Morgan}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ng}{N.}%
+     {Andrew~Y}{A.~Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {MIT; 1998}%
+  }
+  \strng{namehash}{AP+1}
+  \strng{fullhash}{APCAQMNAY1}
+  \field{pages}{1}
+  \field{title}{An application of reinforcement learning to aerobatic
+  helicopter flight}
+  \field{volume}{19}
+  \field{journaltitle}{Advances in neural information processing systems}
+  \field{year}{2007}
+\endentry
+
+\entry{barto1996improving}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Barto}{B.}%
+     {A}{A}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Crites}{C.}%
+     {RH}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BACR1}
+  \strng{fullhash}{BACR1}
+  \field{pages}{1017\bibrangedash 1023}
+  \field{title}{Improving elevator performance using reinforcement learning}
+  \field{volume}{8}
+  \field{journaltitle}{Advances in neural information processing systems}
+  \field{year}{1996}
+\endentry
+
+\entry{wiering2000multi}{inproceedings}{}
+  \true{moreauthor}
+  \name{author}{1}{}{%
+    {{}%
+     {Wiering}{W.}%
+     {Marco}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WM+1}
+  \strng{fullhash}{WM+1}
+  \field{booktitle}{ICML}
+  \field{pages}{1151\bibrangedash 1158}
+  \field{title}{Multi-agent reinforcement learning for traffic light control}
+  \field{year}{2000}
+\endentry
+
+\entry{kimura2001reinforcement}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kimura}{K.}%
+     {Hajime}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yamashita}{Y.}%
+     {Tom}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kobayashi}{K.}%
+     {Shigenobu}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{KHYTKS1}
+  \strng{fullhash}{KHYTKS1}
+  \field{booktitle}{Decision and Control, 2001. Proceedings of the 40th IEEE
+  Conference on}
+  \field{pages}{411\bibrangedash 416}
+  \field{title}{Reinforcement learning of walking behavior for a four-legged
+  robot}
+  \field{volume}{1}
+  \field{year}{2001}
+\endentry
+
 \lossort
 \endlossort
 

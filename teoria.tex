@@ -19,7 +19,7 @@ W ostatniej dekadzie można zauważyć zwiększone użycie metod uczenia maszyno
 \subsection{Uczenie nadzorowane}
 \label{subsec:uczenienadzorowane}
 
-Uczenie nadzorowane polega na wnioskowaniu funkcji z określonych danych treningowych.
+Uczenie nadzorowane polega na wnioskowaniu funkcji z określonych danych trenujących.
 Wykorzystując dostarczone przykłady algorytmy potrafią estymować wartości danych, które mogą nie występować w 
 podanym zbiorze wejściowym. Dzięki generalizowaniu z przykładów, metody uczenia nadzorowanego są w stanie 
 wyznaczać przewidywane wartości na podstawie danych trenujących.
@@ -143,31 +143,56 @@ można by było zaobserwować pojawienie się kolejnego klastra danych, co oznac
 \label{subsec:uczeniezewzmocnieniem}
 
 Uczenie ze wzmocnieniem jest obszarem uczenia maszynowego, w którym inteligentny agent wykonując akcję w otoczeniu otrzymuje odpowiednią nagrodę.
-Robot decyduje jaka akcja zostanie wykonana na podstawie istniejącej polisy. Polisa jest to 
+Robot decyduje jaka akcja zostanie wykonana na podstawie istniejącej polityki. Algorytmy uczenia ze wzmocnieniem nie 
+wymagają danych trenujących, aby wykonać swoje zadanie. Na podstawie wiedzy o stanie otoczenia, możliwych do wykonania 
+akcji w danym stanie oraz funkcji nagrody, która agent otrzymuje za wykonanie danych akcji, robot ucząc się metodą prób 
+i błędów uczy się sposobu wybierania kolejnych akcji (polityki) tak aby osiągnąć swój cel.
 
-Dział uczenia maszynowego
-● Brak przykładów trenujących
-● Nauka na przez interakcję z otoczeniem
-● Metoda prób i błędów
-● Natychmiastowa nagroda (akcję wpływają
-na otrzymaną nagrodę)
-● Opóźniona nagroda (akcję wpływają
-również na następne sytuacje przez to
-na kolejne nagrody)
+\begin{figure}[h]
+    \centering
+    \textbf{Uczenie ze wzmocnieniem}\par\medskip
+    \includegraphics[scale=0.8]{DIAGRAMreinforcementlearning}
+    \caption{Schemat uczenia ze wzmocnieniem. Źródło: Opracowanie własne}
+    \label{fig:DIAGRAMreinforcementlearning}
+\end{figure}
 
-Podstawową funkcjonalnością aplikacji, jest implementacja inteligentnego agenta, który
-mając wiedzę na temat:
-➢ akcji, które może wykonać,
-➢ stanu w jakim się znajduje,
-➢ zasad, które definiują co agent obserwuje,
-➢ zasad, definiujących warunki otrzymania nagrody,
-jest w stanie dostosować swoje kolejne działania (wybrane akcje), tak aby uzyskać jak
-najlepszy wynik w kolejnych iteracjach symulacji.
+Na rys. \ref{fig:DIAGRAMreinforcementlearning} przedstawiono schemat współpracy agenta ze środowiskiem. Agent 
+podejmując akcję w otoczeniu, dostaje nagrodę za podjętą decyzję w danym stanie oraz informacje o nowym, aktualnym 
+stanie środowiska (otoczenie może ulec zmianie po wykonaniu przez robota akcji).
 
+Algorytmy uczenia ze wzmocnieniem dotyczą specyficznych zadań występujących w uczeniu maszynowym. Problem polega na 
+odnalezieniu przez agenta optymalnej akcji do wykonania, na podstawie wiedzy o aktualnym jego stanie. W przypadku, 
+gdy to działanie jest powtórzone, możemy mówić o MDP (Procesy decyzyjne Markowa).
 
+Procesem decyzyjnym Markowa nazywamy model środowiska w algorytmach uczenia ze wzmocnieniem, oznaczamy go jako:\\
+$$MDP = (S, A, P(s, s'), R(r, r'), \gamma)$$
+gdzie
+\begin{enumerate}
+ \item $S$ to zbiór stanów
+ \item $A$ zbiór możliwych akcji
+ \item $P(s, s')$ prawdopodobieństwo przejścia do stanu $s'$ ze stanu $s$ po wykonaniu akcji $a$, w czasie $t$
+ \item $R(r, r')$ nagroda po przejściu do stanu $s'$ ze stanu $s$
+ \item $\gamma$ współczynnik regulujący stosunek między nagrodami przewidywanymi w późniejszym czasie i 
+otrzymywanymi aktualnie, $0 < \gamma < 1$
+\end{enumerate}
+
+Zadaniem MDP jest uzyskanie takiej polityki robota, która zmaksymalizuje sumę otrzymywanych nagród.
+
+$$\sum\limits_{t=0}^\infty \gamma^{t} R_{a_{t}}(s_{t}, s_{t+1})$$
+
+Algorytmy uczenia ze wzmocnieniem znalazły zastosowanie między innymi w implementacji autonomicznego 
+helikoptera\cite{abbeel2007application}, udoskonaleniu działania windy\cite{barto1996improving}, usprawnienia 
+sygnalizacji świetlnej\cite{wiering2000multi} czy budowie inteligentnego robota\cite{kimura2001reinforcement}.
 
 
 \section{Podsumowanie}
+
+Uczenie nienadzorowane posiada tę przewagę nad uczniem nadzorowanym, że nie wymaga oznaczenia danych trenujących 
+oraz potrafi wykryć ukryte zależności pomiędzy cechami przykładów. Jednak w odróżnieniu od obydwu metod, uczenie ze 
+wzmacnianiem jest odmienne w tym, że nie wymaga podawania jakichkolwiek danych przykładowych, a jedynie na podstawie 
+zdefiniowanych nagród i akcji, agent uczy się odpowiedniego działania.
+By zaimplementować robota uczącego się wykonywania akcji w otoczeniu wybrano implementacje metod uczenia ze 
+wzmacnianiem, ze względu na charakterystykę środowiska odpowiadającą wymaganiom procesów decyzyjnych Markowa.
 
 
 

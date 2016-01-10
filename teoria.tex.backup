@@ -1,11 +1,7 @@
-\chapter{Sztuczna inteligencja - rozdział teoretyczny}
+\chapter{Uczenie maszynowe - rozdział teoretyczny}
 \label{cha:ogolnyrozdzialteoretyczny}
 
 Jednym z najistotniejszych zagadnień z dziedziny sztucznej inteligencji jest uczenie maszynowe. 
-
-
-\section{Uczenie maszynowe}
-
 Uczenie maszynowe jest metodą analizy danych, która automatyzuje budowę modelu analitycznego na podstawie nauki z 
 danych. W wielu zastosowaniach ich użycie jest znacznie bardziej efektywne od manualnego programowania, w wyniku czego 
 uczenie maszynowe znalazło szerokie zastosowanie w informatyce i innych dziedzinach.
@@ -107,7 +103,8 @@ długości i szerokości płatka kwiatu. Wyraźnie widać podział na dwa podsta
 \end{figure}
 
 Stosując algorytmy uczenia nienadzorowanego, nie wiemy w jaki sposób klasyfikować dane trenujące. W tym celu możemy 
-wykorzystać algorytm k-means, który na podstawie określonych cech grupuje dane w podaną liczbę klastrów.
+wykorzystać algorytm k-means\cite{coates2012learning}, który na podstawie określonych cech grupuje dane w podaną liczbę 
+klastrów.
 Poddając przedstawione dane działaniu algorytmu k-means, uzyskujemy wynik przedstawiony na rys. \ref{fig:cluster2} oraz 
 rys. \ref{fig:cluster3}.
 
@@ -115,7 +112,7 @@ rys. \ref{fig:cluster3}.
 \begin{figure}[h!]
     \centering
     \textbf{Wynik działania algorytmu k-means}\par\medskip
-    \includegraphics[scale=0.4]{cluster2}
+    \includegraphics[scale=0.5]{cluster2}
     \caption{Wynik działania algorytmu klasteryzacji k-means dla 2 klastrów kwiatów irysów w zależności od szerokości i 
 długości płatka kwiatu. Źródło: Opracowanie własne}
     \label{fig:cluster2}
@@ -144,6 +141,41 @@ można by było zaobserwować pojawienie się kolejnego klastra danych, co oznac
 
 \subsection{Uczenie ze wzmocnieniem}
 \label{subsec:uczeniezewzmocnieniem}
+
+Uczenie ze wzmocnieniem jest obszarem uczenia maszynowego, w którym inteligentny agent wykonując akcję w otoczeniu otrzymuje odpowiednią nagrodę.
+Robot decyduje jaka akcja zostanie wykonana na podstawie istniejącej polityki. Algorytmy uczenia ze wzmocnieniem nie 
+wymagają danych trenujących, aby wykonać swoje zadanie. Na podstawie wiedzy o stanie otoczenia, możliwych do wykonania 
+akcji w danym stanie oraz funkcji nagrody, która agent otrzymuje za wykonanie danych akcji, robot ucząc się metodą prób 
+i błędów uczy się sposobu wybierania kolejnych akcji (polityki) tak aby osiągnąć swój cel.
+
+\begin{figure}[h]
+    \centering
+    \textbf{Uczenie ze wzmocnieniem}\par\medskip
+    \includegraphics[scale=0.8]{DIAGRAMreinforcementlearning}
+    \caption{Schemat uczenia ze wzmocnieniem. Źródło: Opracowanie własne}
+    \label{fig:DIAGRAMreinforcementlearning}
+\end{figure}
+
+Na rys. \ref{fig:DIAGRAMreinforcementlearning} przedstawiono schemat współpracy agenta ze środowiskiem. Agent 
+podejmując akcję w otoczeniu, dostaje nagrodę za podjętą decyzję w danym stanie oraz informacje o nowym, aktualnym 
+stanie środowiska (otoczenie może ulec zmianie po wykonaniu przez robota akcji).
+
+Algorytmy uczenia ze wzmocnieniem dotyczą specyficznych zadań występujących w uczeniu maszynowym. Problem polega na 
+odnalezieniu przez agenta optymalnej akcji do wykonania, na podstawie wiedzy o aktualnym jego stanie. W przypadku, 
+gdy to działanie jest powtórzone, możemy mówić o MDP (Procesy decyzyjne Markowa).
+
+Procesem decyzyjnym Markowa nazywamy model środowiska w algorytmach uczenia ze wzmocnieniem, oznaczamy go jako:\\
+$$MDP = (S, A, P(s, s'), R(r, r'), \gamma)$$
+gdzie
+\begin{enumerate}
+ \item $S$ to zbiór stanów
+ \item $A$ zbiór możliwych akcji
+ \item $P(s, s')$ prawdopodobieństwo przejścia do stanu $s'$ ze stanu $s$ po wykonaniu akcji $a$, w czasie $t$
+ \item $R(r, r')$ nagroda po przejściu do stanu $s'$ ze stanu $s$
+ \item $\gamma$ współczynnik regulujący stosunek między nagrodami przewidywanymi w późniejszym czasie i 
+otrzymywanymi aktualnie
+\end{enumerate}
+
 
 
 

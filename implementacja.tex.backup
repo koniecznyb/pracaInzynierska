@@ -20,22 +20,9 @@ programie do przedstawienia wartości tablicy stan-akcja $Q(S, A)$ wykorzystano 
 \label{sec:symulacjagraficzna}
 
 Jako symulacja graficzna wykorzystano figury geometryczne, reprezentujące agenta, przeszkody, granice i cel.
-Agent porusza się na dwuwymiarowej przestrzeni o wymiarach $50*50$ pikseli.
+Agent porusza się na dwuwymiarowej przestrzeni o wymiarach $50x50$ pikseli.
 
 \section{Reprezentacja stanu}
-\label{sec:reprezentacjastanu}
-
-Stan w jakim znajduje się aktualnie robot jest przedstawiony w postaci siatki $3x3$. Agent jest świadomy obiektów 
-znajdujących się nad nim, pod nim oraz po jego prawej i lewej stronie.
-
-\begin{figure}[h!]
-    \centering
-    \textbf{Wynik działania algorytmu k-means}\par\medskip
-    \includegraphics[scale=2]{rect3163}
-    \caption{Wynik działania algorytmu klasteryzacji k-means dla 3 klastrów kwiatów irysów w zależności od szerokości i 
-długości płatka kwiatu. Źródło: Opracowanie własne}
-    \label{fig:cluster3}
-\end{figure}
 
 
 
