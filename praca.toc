@@ -2,6 +2,7 @@
 \select@language {polish}
 \contentsline {chapter}{\numberline {1}Wst\IeC {\k e}p}{7}
 \contentsline {section}{\numberline {1.1}Cele pracy}{7}
+\contentsline {section}{\numberline {1.2}Zawarto\IeC {\'s}\IeC {\'c} pracy}{8}
 \contentsline {chapter}{\numberline {2}Uczenie maszynowe - rozdzia\IeC {\l } teoretyczny}{9}
 \contentsline {section}{\numberline {2.1}Podej\IeC {\'s}cia do uczenia maszynowego}{9}
 \contentsline {subsection}{\numberline {2.1.1}Uczenie nadzorowane}{9}
@@ -10,11 +11,11 @@
 \contentsline {section}{\numberline {2.2}Podsumowanie}{14}
 \contentsline {chapter}{\numberline {3}Implementacja}{15}
 \contentsline {section}{\numberline {3.1}Symulacja graficzna}{15}
-\contentsline {section}{\numberline {3.2}Reprezentacja stanu}{15}
-\contentsline {subsection}{\numberline {3.2.1}Wyb\IeC {\'o}r algorytm\IeC {\'o}w}{16}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Q-learning}{16}
-\contentsline {subsubsection}{\numberline {3.2.1.2}SARSA}{16}
-\contentsline {section}{\numberline {3.3}Wykorzystane technologie}{16}
-\contentsline {section}{\numberline {3.4}Napotkane problemy}{16}
-\contentsline {section}{\numberline {3.5}Wynik dzia\IeC {\l }ania}{16}
-\contentsline {chapter}{\numberline {4}Podsumowanie}{17}
+\contentsline {section}{\numberline {3.2}Reprezentacja stanu}{16}
+\contentsline {subsection}{\numberline {3.2.1}Wyb\IeC {\'o}r algorytm\IeC {\'o}w}{17}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Q-learning}{17}
+\contentsline {subsubsection}{\numberline {3.2.1.2}SARSA}{17}
+\contentsline {section}{\numberline {3.3}Wykorzystane technologie}{18}
+\contentsline {section}{\numberline {3.4}Napotkane problemy}{18}
+\contentsline {section}{\numberline {3.5}Wynik dzia\IeC {\l }ania}{19}
+\contentsline {chapter}{\numberline {4}Podsumowanie}{21}

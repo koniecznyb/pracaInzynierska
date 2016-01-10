@@ -32,25 +32,11 @@ Dzięki temu możliwe będzie podsumowanie różnic między uczeniem ze wzmocnie
 maszynowego.
 
 
+\section{Zawartość pracy}
+\label{sec:zawartoscpracy}
 
-Wstęp
-  cele pracy
-  zawartość pracy
-Teoria	
-  uczenie maszynowego
-  podejscia uczenia maszynowego
-    supervised
-    unsupervised
-    reinforcement
-  przyklady zastosowania
-  podsumowanie
-implementacja
-  opis implementacji
-  wybor algorytmow
-    q-learning
-    sarsa
-  
-  symulacja graficzna
+Pierwszy rozdział stanowi wprowadzenie do pracy, określający jej zakres. W rozdziale drugim 
+przedstawiono 
 
 
 

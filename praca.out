@@ -1,0 +1,17 @@
+\BOOKMARK [0][-]{chapter.1}{Wstep}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Cele pracy}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Zawartosc pracy}{chapter.1}% 3
+\BOOKMARK [0][-]{chapter.2}{Uczenie maszynowe - rozdzial teoretyczny}{}% 4
+\BOOKMARK [1][-]{section.2.1}{Podejscia do uczenia maszynowego}{chapter.2}% 5
+\BOOKMARK [2][-]{subsection.2.1.1}{Uczenie nadzorowane}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.2}{Uczenie nienadzorowane}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.3}{Uczenie ze wzmocnieniem}{section.2.1}% 8
+\BOOKMARK [1][-]{section.2.2}{Podsumowanie}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.3}{Implementacja}{}% 10
+\BOOKMARK [1][-]{section.3.1}{Symulacja graficzna}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.2}{Reprezentacja stanu}{chapter.3}% 12
+\BOOKMARK [2][-]{subsection.3.2.1}{Wyb\363r algorytm\363w}{section.3.2}% 13
+\BOOKMARK [1][-]{section.3.3}{Wykorzystane technologie}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.4}{Napotkane problemy}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.5}{Wynik dzialania}{chapter.3}% 16
+\BOOKMARK [0][-]{chapter.4}{Podsumowanie}{}% 17

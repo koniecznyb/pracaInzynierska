@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.21)  10 JAN 2016 04:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.21)  10 JAN 2016 13:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1238,6 +1238,9 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box54
 )
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 Package biblatex Info: Trying to load language 'polish'...
 Package biblatex Info: ... file 'polish.lbx' found.
 
@@ -1253,31 +1256,26 @@ Package csquotes Info: Redefining alias 'default' -> 'polish'.
 LaTeX Warning: Unused global option(s):
     [11pt].
 
-(./praca.aux (./wstep.aux) (./teoria.aux) (./implementacja.aux
-
-LaTeX Warning: Label `fig:cluster3' multiply defined.
-
-) (./podsumowanie.aux))
+(./praca.aux (./wstep.aux) (./teoria.aux) (./implementacja.aux)
+(./podsumowanie.aux))
 \openout1 = `praca.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 156.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 157.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+) (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count372
 \scratchdimen=\dimen272
@@ -1448,15 +1446,15 @@ Package biblatex Warning: Data encoding is 'utf8'.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'praca.bbl' found.
 (./praca.bbl)
-Package biblatex Info: Reference section=0 on input line 156.
-Package biblatex Info: Reference segment=0 on input line 156.
+Package biblatex Info: Reference section=0 on input line 157.
+Package biblatex Info: Reference segment=0 on input line 157.
 \c@lstlisting=\count378
 \c__siunitx_mathsf_int=\count379
-LaTeX Font Info:    Try loading font information for U+msa on input line 156.
+LaTeX Font Info:    Try loading font information for U+msa on input line 157.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 156.
+LaTeX Font Info:    Try loading font information for U+msb on input line 157.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1466,23 +1464,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <agh.jpg, id=1, 146.4672pt x 284.7438pt>
 File: agh.jpg Graphic file (type jpg)
  <use agh.jpg>
-Package pdftex.def Info: agh.jpg used on input line 158.
+Package pdftex.def Info: agh.jpg used on input line 159.
 (pdftex.def)             Requested size: 87.88098pt x 170.8476pt.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 158.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 159.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 158.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 159.
 LaTeX Font Info:    Font shape `T1/phv/bx/sc' in size <12> not available
-(Font)              Font shape `T1/phv/b/sc' tried instead on input line 158.
+(Font)              Font shape `T1/phv/b/sc' tried instead on input line 159.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 158.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 159.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 158.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 159.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 158.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 159.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./agh.jpg>] [2
@@ -1493,9 +1491,9 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 171.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 172.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 171.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 172.
  (./praca.toc)
 \tf@toc=\write4
 \openout4 = `praca.toc'.
@@ -1514,18 +1512,22 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 Rozdzia\l  1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-) [7]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7])
+[8]
 \openout2 = `teoria.aux'.
 
- (./teoria.tex [8
+ (./teoria.tex
+Rozdzia\l  2.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
+[9
 
 
 
 ]
-Rozdzia\l  2.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
-[9]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 73.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1592,58 +1594,107 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  (./implementacja.tex
 Rozdzia\l  3.
-<rect3163.png, id=100, 36.938pt x 36.938pt>
-File: rect3163.png Graphic file (type png)
- <use rect3163.png>
-Package pdftex.def Info: rect3163.png used on input line 34.
-(pdftex.def)             Requested size: 73.8758pt x 73.8758pt.
+<symulacja.png, id=100, 340.27126pt x 356.33125pt>
+File: symulacja.png Graphic file (type png)
+ <use symulacja.png>
+Package pdftex.def Info: symulacja.png used on input line 30.
+(pdftex.def)             Requested size: 136.10608pt x 142.52997pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<symulacja2.png, id=102, 326.21875pt x 349.305pt>
+File: symulacja2.png Graphic file (type png)
+ <use symulacja2.png>
+Package pdftex.def Info: symulacja2.png used on input line 37.
+(pdftex.def)             Requested size: 130.48518pt x 139.71951pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15
+
+
+
+] <grid1.pdf, id=106, 20.075pt x 20.075pt>
+File: grid1.pdf Graphic file (type pdf)
+ <use grid1.pdf>
+Package pdftex.def Info: grid1.pdf used on input line 73.
+(pdftex.def)             Requested size: 200.74936pt x 200.74936pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<grid2.pdf, id=107, 20.075pt x 20.075pt>
+File: grid2.pdf Graphic file (type pdf)
+ <use grid2.pdf>
+Package pdftex.def Info: grid2.pdf used on input line 81.
+(pdftex.def)             Requested size: 200.74936pt x 200.74936pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<grid3.pdf, id=108, 20.075pt x 20.075pt>
+File: grid3.pdf Graphic file (type pdf)
+ <use grid3.pdf>
+Package pdftex.def Info: grid3.pdf used on input line 89.
+(pdftex.def)             Requested size: 200.74936pt x 200.74936pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<grid4.pdf, id=109, 20.075pt x 20.075pt>
+File: grid4.pdf Graphic file (type pdf)
+ <use grid4.pdf>
+Package pdftex.def Info: grid4.pdf used on input line 97.
+(pdftex.def)             Requested size: 200.74936pt x 200.74936pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 3219) in paragraph at lines 54--58
+Underfull \vbox (badness 2735) has occurred while \output is active []
+
+ [16 <./symulacja.png> <./symulacja2.png>] [17 <./grid1.pdf> <./grid2.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./grid2.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+>]
+Underfull \hbox (badness 3219) in paragraph at lines 117--121
 []\T1/ptm/m/n/10.95 Java 8 (±ro-do-wi-sko In-tel-liJ Idea) LibGdx (sy-mu-la-cja
  gra-ficzna) Pro-ject Lom-bok Apa-che
  []
 
+) [18 <./grid3.pdf> <./grid4.pdf
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15
-
-
-
-])
-[16 <./rect3163.png>]
+pdfTeX warning: /usr/bin/pdflatex (file ./grid4.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+>] [19]
 \openout2 = `podsumowanie.aux'.
 
- (./podsumowanie.tex
+ (./podsumowanie.tex [20
+
+
+
+]
 Rozdzia\l  4.
-) [17
+) [21] [22
 
 
-
-] [18
-
-
-] [19] [20] (./praca.aux (./wstep.aux) (./teoria.aux)
+] [23] [24] (./praca.aux (./wstep.aux) (./teoria.aux)
 (./implementacja.aux) (./podsumowanie.aux))
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package logreq Info: Writing requests to 'praca.run.xml'.
 \openout1 = `praca.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22192 strings out of 494993
- 406475 string characters out of 6180620
- 566062 words of memory out of 5000000
- 24979 multiletter control sequences out of 15000+600000
+ 22243 strings out of 494993
+ 407308 string characters out of 6180620
+ 566179 words of memory out of 5000000
+ 25021 multiletter control sequences out of 15000+600000
  81061 words of font info for 87 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 46i,11n,51p,10424b,1761s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,11n,50p,10424b,1761s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1659,10 +1710,10 @@ e/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist
 1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca.pdf (20 pages, 322100 bytes).
+Output written on praca.pdf (24 pages, 345687 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
+ 223 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

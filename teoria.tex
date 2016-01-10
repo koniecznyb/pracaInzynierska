@@ -144,9 +144,9 @@ można by było zaobserwować pojawienie się kolejnego klastra danych, co oznac
 
 Uczenie ze wzmocnieniem jest obszarem uczenia maszynowego, w którym inteligentny agent wykonując akcję w otoczeniu otrzymuje odpowiednią nagrodę.
 Robot decyduje jaka akcja zostanie wykonana na podstawie istniejącej polityki. Algorytmy uczenia ze wzmocnieniem nie 
-wymagają danych trenujących, aby wykonać swoje zadanie. Na podstawie wiedzy o stanie otoczenia, możliwych do wykonania 
-akcji w danym stanie oraz funkcji nagrody, która agent otrzymuje za wykonanie danych akcji, robot ucząc się metodą prób 
-i błędów uczy się sposobu wybierania kolejnych akcji (polityki) tak aby osiągnąć swój cel.
+wymagają danych trenujących by wykonać swoje zadanie. Na podstawie wiedzy o stanie otoczenia, możliwych do wykonania 
+akcji w danym stanie oraz funkcji nagrody, która agent otrzymuje za wykonanie danych akcji, robot, ucząc się metodą 
+prób i błędów odkrywa sposoby wybierania kolejnych akcji (polityki) tak, aby osiągnąć swój cel.
 
 \begin{figure}[h]
     \centering
@@ -157,11 +157,11 @@ i błędów uczy się sposobu wybierania kolejnych akcji (polityki) tak aby osi�
 \end{figure}
 
 Na rys. \ref{fig:DIAGRAMreinforcementlearning} przedstawiono schemat współpracy agenta ze środowiskiem. Agent 
-podejmując akcję w otoczeniu, dostaje nagrodę za podjętą decyzję w danym stanie oraz informacje o nowym, aktualnym 
+podejmując akcję w otoczeniu dostaje nagrodę za podjętą decyzję w danym stanie, oraz informacje o nowym, aktualnym 
 stanie środowiska (otoczenie może ulec zmianie po wykonaniu przez robota akcji).
 
 Algorytmy uczenia ze wzmocnieniem dotyczą specyficznych zadań występujących w uczeniu maszynowym. Problem polega na 
-odnalezieniu przez agenta optymalnej akcji do wykonania, na podstawie wiedzy o aktualnym jego stanie. W przypadku, 
+odnalezieniu przez agenta optymalnej akcji do wykonania na podstawie wiedzy o aktualnym jego stanie. W przypadku, 
 gdy to działanie jest powtórzone, możemy mówić o MDP (Procesy decyzyjne Markowa).
 
 Procesem decyzyjnym Markowa nazywamy model środowiska w algorytmach uczenia ze wzmocnieniem, oznaczamy go jako:\\

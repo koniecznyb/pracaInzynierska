@@ -19,12 +19,102 @@ programie do przedstawienia wartości tablicy stan-akcja $Q(S, A)$ wykorzystano 
 \section{Symulacja graficzna}
 \label{sec:symulacjagraficzna}
 
-Jako symulacja graficzna wykorzystano figury geometryczne, reprezentujące agenta, przeszkody, granice i cel.
-Agent porusza się na dwuwymiarowej przestrzeni o wymiarach $50x50$ pikseli.
+Jako symulację graficzna działania algorytmu wykorzystano figury geometryczne reprezentujące: agenta, przeszkody, 
+granice i cel.
+Agent porusza się na dwuwymiarowej przestrzeni o wymiarach $50*50$ pikseli.
+
+Przykładowy stan środowiska w symulacji przedstawiono na rys. \ref{fig:symulacja}, \ref{fig:symulacja2}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{symulacja}
+    \caption{Przykładowy stan symulacji. Źródło: Opracowanie własne}
+    \label{fig:symulacja}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{symulacja2}
+    \caption{Przykładowy stan symulacji. Źródło: Opracowanie własne}
+    \label{fig:symulacja2}
+\end{figure}
+
+Na rys. \ref{fig:symulacja}, \ref{fig:symulacja2}, można zauważyć następującą reprezentacje obiektów jako kolor:
+\begin{itemize}
+\renewcommand{\labelitemi}{$\bullet$}
+ \item czerwony - przeszkoda,
+ \item biały - agent,
+ \item niebieski - nagroda,
+ \item szary - granica.
+\end{itemize}
+
 
 \section{Reprezentacja stanu}
+\label{sec:reprezentacjastanu}
 
+Stan w jakim znajduje się aktualnie robot jest przedstawiony w postaci siatki $3*3$. Agent jest świadomy obiektów 
+znajdujących się nad nim, pod nim oraz po jego prawej i lewej stronie.
+Agent może napotkać następujące obiekty
+\begin{description}
+%\renewcommand{\labelitemi}{$\bullet$}
+ \item przeszkoda $(O)$, robot \textbf{może} wejść na przeszkodę, jednak traci za to określoną liczbę punktów;
+ \item nagroda $(P)$, stan końcowy. Gdy agent osiąga cel symulacja zapisuje wynik działania i uruchamia się kolejny 
+epizod nauki robota.
+ \item granica $(B)$, granica jest obiektem wyznaczającym pole symulacji, dlatego też nie jest możliwe przemieszczenie 
+się na nią;
+  \item puste pole $(E)$, pole nie zawierające żadnego z pozostałych obiektów;
+\end{description}
+ 
+Przykładowe stany w jakich może się znaleźć robot przedstawiono na rys. \ref{fig:grid1}, \ref{fig:grid2}, 
+\ref{fig:grid3} i \ref{fig:grid4}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=10]{grid1}
+    \caption{Agent graniczy od górnej strony z przeszkodą, natomiast w pozostałych kierunkach znajdują się puste pola. 
+Źródło: Opracowanie własne}
+    \label{fig:grid1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=10]{grid2}
+    \caption{Agent graniczy od góry i lewej strony z granicą, oznacza to, że robot znajduje się w górnym lewym rogu 
+mapy, a jedynymi akcjami jakie może wykonać to ruch w prawo i ruch w dół. Źródło: Opracowanie własne}
+    \label{fig:grid2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=10]{grid3}
+    \caption{Agent graniczy od góry i lewej strony z granicą, a od prawej z stanem końcowym. Agent wykonując 
+ruch w prawo osiągnie swój cel, powodując tym samym zakończenie i zresetowanie symulacji. Źródło: Opracowanie własne}
+    \label{fig:grid3}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=10]{grid4}
+    \caption{Agent graniczy z każdej strony z przeszkodą, jakikolwiek ruch powoduje utratę punktów. Źródło: 
+Opracowanie własne}
+    \label{fig:grid4}
+\end{figure}
+
+\subsection{Akcje}
+\label{subsec:akcje}
+
+Robot znajdując się w dowolnym stanie nie graniczącym z obiektem $B$ (granicą), jest w stanie wykonać jedną z czterech 
+akcji:
+
+\begin{enumerate}
+ \item ruch do góry,
+ \item ruch do dołu,
+ \item ruch w prawo,
+ \item ruch w lewo.
+\end{enumerate}
+
+Agent \textbf{nie może} przemieścić się na granicę, w związku z czym w przypadku sąsiedztwa z granicą, robot posiada 
+ograniczony zakres ruchów. 
 
 \subsection{Wybór algorytmów}
 \label{subsec:wyboralgorytmow}
