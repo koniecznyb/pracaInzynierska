@@ -12,10 +12,11 @@
 \contentsline {chapter}{\numberline {3}Implementacja}{15}
 \contentsline {section}{\numberline {3.1}Symulacja graficzna}{15}
 \contentsline {section}{\numberline {3.2}Reprezentacja stanu}{16}
-\contentsline {subsection}{\numberline {3.2.1}Wyb\IeC {\'o}r algorytm\IeC {\'o}w}{17}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Q-learning}{17}
-\contentsline {subsubsection}{\numberline {3.2.1.2}SARSA}{17}
-\contentsline {section}{\numberline {3.3}Wykorzystane technologie}{18}
-\contentsline {section}{\numberline {3.4}Napotkane problemy}{18}
+\contentsline {subsection}{\numberline {3.2.1}Akcje}{18}
+\contentsline {subsection}{\numberline {3.2.2}Wyb\IeC {\'o}r algorytm\IeC {\'o}w}{19}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Q-learning}{19}
+\contentsline {subsubsection}{\numberline {3.2.2.2}SARSA}{19}
+\contentsline {section}{\numberline {3.3}Wykorzystane technologie}{19}
+\contentsline {section}{\numberline {3.4}Napotkane problemy}{19}
 \contentsline {section}{\numberline {3.5}Wynik dzia\IeC {\l }ania}{19}
 \contentsline {chapter}{\numberline {4}Podsumowanie}{21}

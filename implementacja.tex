@@ -28,14 +28,14 @@ Przykładowy stan środowiska w symulacji przedstawiono na rys. \ref{fig:symulac
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.4]{symulacja}
-    \caption{Przykładowy stan symulacji. Źródło: Opracowanie własne}
+    \caption{Przykładowy stan symulacji}
     \label{fig:symulacja}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.4]{symulacja2}
-    \caption{Przykładowy stan symulacji. Źródło: Opracowanie własne}
+    \caption{Przykładowy stan symulacji}
     \label{fig:symulacja2}
 \end{figure}
 
@@ -68,35 +68,33 @@ się na nią;
 Przykładowe stany w jakich może się znaleźć robot przedstawiono na rys. \ref{fig:grid1}, \ref{fig:grid2}, 
 \ref{fig:grid3} i \ref{fig:grid4}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=10]{grid1}
-    \caption{Agent graniczy od górnej strony z przeszkodą, natomiast w pozostałych kierunkach znajdują się puste pola. 
-Źródło: Opracowanie własne}
+    \caption{Agent graniczy od górnej strony z przeszkodą, natomiast w pozostałych kierunkach znajdują się puste pola}
     \label{fig:grid1}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=10]{grid2}
     \caption{Agent graniczy od góry i lewej strony z granicą, oznacza to, że robot znajduje się w górnym lewym rogu 
-mapy, a jedynymi akcjami jakie może wykonać to ruch w prawo i ruch w dół. Źródło: Opracowanie własne}
+mapy, a jedynymi akcjami jakie może wykonać to ruch w prawo i ruch w dół}
     \label{fig:grid2}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=10]{grid3}
     \caption{Agent graniczy od góry i lewej strony z granicą, a od prawej z stanem końcowym. Agent wykonując 
-ruch w prawo osiągnie swój cel, powodując tym samym zakończenie i zresetowanie symulacji. Źródło: Opracowanie własne}
+ruch w prawo osiągnie swój cel, powodując tym samym zakończenie i zresetowanie symulacji}
     \label{fig:grid3}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[scale=10]{grid4}
-    \caption{Agent graniczy z każdej strony z przeszkodą, jakikolwiek ruch powoduje utratę punktów. Źródło: 
-Opracowanie własne}
+    \caption{Agent graniczy z każdej strony z przeszkodą, jakikolwiek ruch powoduje utratę punktów}
     \label{fig:grid4}
 \end{figure}
 
@@ -118,6 +116,8 @@ ograniczony zakres ruchów.
 
 \subsection{Wybór algorytmów}
 \label{subsec:wyboralgorytmow}
+
+Do implementacji inteligentnego zachowania agenta, wybrano algorytm Q-learning z dziedziny uczenia ze wzmocnieniem.
 
 
 
