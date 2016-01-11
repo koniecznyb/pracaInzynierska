@@ -263,6 +263,54 @@
   \field{year}{2012}
 \endentry
 
+\entry{watkins1992q}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Watkins}{W.}%
+     {Christopher~JCH}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dayan}{D.}%
+     {Peter}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{WCJDP1}
+  \strng{fullhash}{WCJDP1}
+  \field{number}{3-4}
+  \field{pages}{279\bibrangedash 292}
+  \field{title}{Q-learning}
+  \field{volume}{8}
+  \field{journaltitle}{Machine learning}
+  \field{year}{1992}
+\endentry
+
+\entry{rummery1994line}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Rummery}{R.}%
+     {Gavin~A}{G.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Niranjan}{N.}%
+     {Mahesan}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {University of Cambridge, Department of Engineering}%
+  }
+  \strng{namehash}{RGANM1}
+  \strng{fullhash}{RGANM1}
+  \field{title}{On-line Q-learning using connectionist systems}
+  \field{year}{1994}
+\endentry
+
 \entry{abbeel2007application}{article}{}
   \name{author}{4}{}{%
     {{}%
@@ -368,6 +416,41 @@
   robot}
   \field{volume}{1}
   \field{year}{2001}
+\endentry
+
+\entry{thrun1992efficient}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Thrun}{T.}%
+     {Sebastian~B}{S.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Citeseer}%
+  }
+  \strng{namehash}{TSB1}
+  \strng{fullhash}{TSB1}
+  \field{title}{Efficient exploration in reinforcement learning}
+  \field{year}{1992}
+\endentry
+
+\entry{wiewiora2004efficient}{thesis}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Wiewiora}{W.}%
+     {Eric}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WE1}
+  \strng{fullhash}{WE1}
+  \field{title}{Efficient Exploration for Reinforcement Learning}
+  \list{institution}{1}{%
+    {Citeseer}%
+  }
+  \field{type}{phdthesis}
+  \field{year}{2004}
 \endentry
 
 \lossort

@@ -181,15 +181,32 @@ Zadaniem MDP jest uzyskanie takiej polityki robota, która zmaksymalizuje sumę 
 
 $$\sum\limits_{t=0}^\infty \gamma^{t} R_{a_{t}}(s_{t}, s_{t+1})$$
 
-Algorytmy uczenia ze wzmocnieniem znalazły zastosowanie między innymi w implementacji autonomicznego 
+Podstawowymi algorytmami w metodach uczenia ze wzmocnieniem jest Q-learning\cite{watkins1992q} oraz 
+SARSA\cite{rummery1994line}.
+
+  Algorytmy uczenia ze wzmocnieniem znalazły zastosowanie między innymi w implementacji autonomicznego 
 helikoptera\cite{abbeel2007application}, udoskonaleniu działania windy\cite{barto1996improving}, usprawnienia 
 sygnalizacji świetlnej\cite{wiering2000multi} czy budowie inteligentnego robota\cite{kimura2001reinforcement}.
+
 
 \subsubsection{Q-learning}
 \label{subsubsec:qlearning}
 
-Algorytm Q-learning \cite{watkins1992q} jest off-policy
-\subsection{SARSA}
+Celem działania algorytmu Q-learning jest nauczenie się funkcji $Q(s, a)$, która jest przewidywanym wynikiem wykonania 
+danej akcji, w danym stanie.
+
+$$Q_{t+1}(s_{t}, a_{t}) = Q_{t}(s_{t}, a_{t}) + \alpha * ( R_{t+1} + \gamma * max Qt(s_{t+1}, a) - Q_{t}(s_{t}, 
+a_{t}))$$ 
+
+gdzie
+
+$ Q_{t}(s_{t}, a_{t}) $ - poprzednia wartość,\\
+$\alpha$ - stopień uczenia,  spełnia zależność $ 0 < \alpha <= 1 $,\\
+$\gamma$ - stopień dyskontu, 	spełnia zależność $ 0 <= \gamma <= 1 $,\\
+$R_{t+1}$ - nagroda zaobserwowana po wykonaniu akcji $a$ w stanie $t$.\\
+
+
+
 
 
 \section{Podsumowanie}

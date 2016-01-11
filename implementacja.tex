@@ -13,12 +13,14 @@ jest w stanie dostosować swoje kolejne działania (wybrane akcje), tak aby uzys
 najlepszy wynik w kolejnych iteracjach symulacji. Celem agenta jest dotarcie do punktu końcowego, zdobywając jak 
 największą nagrodę. \\
 \indent Po osiągnięciu celu symulacja jest resetowana, jej wynik jest zapisywany. Robot ucząc się na podstawie 
-poprzednio dokonanych wyborów, buduje tablicę mapującą stan-akcja $Q(S, A)$ do konkretnej wyliczonej wartości. W 
-programie do przedstawienia wartości tablicy stan-akcja $Q(S, A)$ wykorzystano wielowymiarową tablicę.
+poprzednio dokonanych wyborów, buduje strukturę mapującą stan-akcje $Q(S, A)$ do konkretnej wyliczonej wartości. W 
+programie do przedstawienia wartości struktury stan-akcje $Q(S, A)$ wykorzystano wielowymiarową tablicę.
 
-\section{Tablica stan-akcja $Q(S, A)$}
+\section{Struktura stan-akcje $Q(S, A)$}
 
-Tablica $Q(S, A)$ jest to struktura danych przechowująca wszystkie stany i możliwe do wykonania w nich akcje. Każdej z tych akcji przyporządkowana jest odpowiednia wartość, która jest poddawana modyfikacji przez odpowiedni algorytm uczenia ze wzmocnieniem.
+$Q(S, A)$ jest to struktura danych przechowująca wszystkie stany i możliwe do wykonania w nich akcje. Każdej z tych 
+akcji przyporządkowana jest odpowiednia wartość, która jest poddawana modyfikacji przez odpowiedni algorytm uczenia ze 
+wzmocnieniem.
 Ostatecznym celem działania algorytmu jest uzyskanie takich informacji w strukturze $Q(S, A)$, aby robot korzystając z polityki optymalnej (tzn. takiej, w której agent wybiera zawsze najlepszą według niego akcję) wykonał cel z jak najlepszym wynikiem.
 
 W programie zaimplementowana jest funkcja drukowania wyników symulacji do arkusza kalkulacyjnego, przykładowy wpis 
@@ -29,7 +31,7 @@ zaprezentowany jest na rys. \ref{fig:przykladowywpis}.
     \centering
     \includegraphics[scale=0.4]{przykladowywpis}
     \caption{Przykładowy wynik działania algorytmu Q-learning. Można zauważyć, że do każdego stanu przydzielone są 
-akcję wraz z wartością skumulowanej nagrody wyliczonej za pomocą algorytmu.}
+akcje wraz z wartością skumulowanej nagrody wyliczonej za pomocą algorytmu.}
     \label{fig:przykladowywpis}
 \end{figure}
 
@@ -39,8 +41,8 @@ Na rys. \ref{fig:wyjasnieniewpisu} przedstawiono znaczenie symboli w pojedynczym
     \centering
     \includegraphics[scale=1]{wyjasnieniewpisu}
     \caption{Liczba w samym środku reprezentuje numer stanu. Bezpośrednią z nią sąsiadujące są typy obiektów, 
-\textbf{B}order - granica, \textbf{O}stacle - przeszkoda, \textbf{E}mpty - puste pole, \textbf{P}rize - nagroda (stan 
-końcowy)
+\textbf{B}order - granica, \textbf{O}bstacle - przeszkoda, \textbf{E}mpty - puste pole, \textbf{P}rize - nagroda (stan 
+końcowy)}
     \label{fig:wyjasnieniewpisu}
 \end{figure}
 
@@ -56,7 +58,11 @@ ma wybrać jako następną. W tej implementacji rozważane są dwie polityki
 \end{enumerate}
 
 \subsection{Równowaga pomiędzy eksploracją, a eksploatacją}
-Od wyboru polityki zależy stopień eksploracji algorytmu. Gdyby agent za każdym razem wybierał najbardziej korzystną według niego akcję, byłby podatny na zakleszczenie w nieoptymalnym rozwiązaniu. Wprowadzając pewną losowość wyboru akcji agent, będzie w stanie odkryć nowe rozwiązania, nawet jeżeli według jego aktualnej wiedzy znalazł to najbardziej optymalne. Powstało dużo prac dokładniej badających to zagadnienie \ref{thrun1992efficient}, \ref{wiewiora2004efficient}.
+Od wyboru polityki zależy stopień eksploracji algorytmu. Gdyby agent za każdym razem wybierał najbardziej korzystną 
+według niego akcję, byłby podatny na zakleszczenie w nieoptymalnym rozwiązaniu. Wprowadzając pewną losowość wyboru akcji 
+agent, będzie w stanie odkryć nowe rozwiązania, nawet jeżeli według jego aktualnej wiedzy znalazł to najbardziej 
+optymalne. Powstało dużo prac dokładniej badających to zagadnienie \cite{thrun1992efficient}, 
+\cite{wiewiora2004efficient}.
 
 \subsection{$\epsilon$-greedy policy}
 
@@ -128,7 +134,7 @@ Przykładowe stany w jakich może się znaleźć robot przedstawiono na rys. \re
 \begin{figure}[H]
     \centering
     \includegraphics[scale=10]{grid2}
-    \caption{Agent graniczy od góry i lewej strony z granicą, oznacza to, że robot znajduje się w górnym lewym rogu 
+    \caption{Agent sąsiaduje od góry i lewej strony z granicą, oznacza to, że robot znajduje się w górnym lewym rogu 
 mapy, a jedynymi akcjami jakie może wykonać to ruch w prawo i ruch w dół}
     \label{fig:grid2}
 \end{figure}
@@ -136,7 +142,7 @@ mapy, a jedynymi akcjami jakie może wykonać to ruch w prawo i ruch w dół}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=10]{grid3}
-    \caption{Agent graniczy od góry i lewej strony z granicą, a od prawej z stanem końcowym. Agent wykonując 
+    \caption{Agent sąsiaduje od góry i lewej strony z granicą, a od prawej z stanem końcowym. Agent wykonując 
 ruch w prawo osiągnie swój cel, powodując tym samym zakończenie i zresetowanie symulacji}
     \label{fig:grid3}
 \end{figure}
@@ -281,8 +287,9 @@ currentlyPossibleActions.size()));
 \section{Wykorzystane technologie}
 \label{sec:wykorzystanetechnologie}
 
-Java 8 kod został napisany w języku Java. Do generowania grafiki została wykorzystana biblioteka LibGDX. W celu notowania wyników do plików kalkulacyjnych została wykorzystana biblioteka Apache POI.
-W celu zmniejszenia ilości kodu użyto biblioteki Project Lombok, pozwalającej na automatyczne generowane getterów, 
+Kod został napisany w języku Java w wersji 8. Do generowania grafiki został wykorzystany framework LibGDX. W celu 
+notowania wyników do plików kalkulacyjnych została wykorzystana biblioteka Apache POI.
+Aby zmniejszyć ilości kodu użyto biblioteki Project Lombok, pozwalającej na automatyczne generowane getterów, 
 setterów, konstruktorów lub metod hashcode i equals. Do budowania i zarządzania projektem wykorzystano narzędzie Gradle.
 
 \section{Napotkane problemy}
@@ -313,7 +320,7 @@ $\epsilon$-greedy, a optimal policy
 \label{sec:wynikdzialania}
 
 Algorytm z łatwością poradził sobie z wyznaczeniem najkrótszej, najbardziej korzystnej drogi w 
-zaprojektowanym środowisku. Po niedługim procesie nauki, robot generuje skuteczną tablice wartości $Q(S, A)$.
+zaprojektowanym środowisku. Po niedługim procesie nauki, robot generuje skuteczną tablicę wartości $Q(S, A)$.
 Jako, że zaimplementowany został algorytm off-policy Q-learning, można zaobserwować brak wpływu nauczania na politykę 
 wybierania akcji. Pomimo to, że agent znalazł już satysfakcjonujące rozwiązanie to nadal jest zaangażowany w eksploracje 
 nowych stanów. Gdyby wykorzystano algorytm on-policy SARSA, robot pod wpływem uzyskanych wyników zmienił by strategię 
@@ -332,9 +339,11 @@ jeżeli ma taką możliwość wykonuje ruch w takich stan, żeby nie znaleźć s
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{wynik2}
-    \caption{Przykładowy wynik działania algorytmu. Podobnie jak na obrazku wyżej, agent wykonuje podobne wybory. Można 
-zauważyć, że agent znajdując się wewnątrz przeszkody (stan nr. 15), każdy ruch uważa za niekorzystny ale jednak z 
-delikatną przewagą do góry lub w lewo (w kierunku nagrody). W przypadku, gdy agent graniczy z lewej strony z przeszkodą 
+    \caption{Przykładowy wynik działania algorytmu. Analogicznie jak na obrazku wyżej, agent wykonuje podobne wybory. 
+Można 
+zauważyć, że robot znajdując się wewnątrz przeszkody (stan nr. 15), każdy ruch uważa za niekorzystny ale jednak z 
+delikatną przewagą ruchu do góry lub w lewo (w kierunku nagrody). W przypadku, gdy agent graniczy z lewej strony z 
+przeszkodą 
 jak w stanie nr. 16, niedostępna jest akcja MOVE LEFT}
     \label{fig:wynik2}
 \end{figure}
