@@ -21,12 +21,35 @@ programie do przedstawienia wartości tablicy stan-akcja $Q(S, A)$ wykorzystano 
 Tablica $Q(S, A)$ jest to struktura danych przechowująca wszystkie stany i możliwe do wykonania w nich akcje. Każdej z tych akcji przyporządkowana jest odpowiednia wartość, która jest poddawana modyfikacji przez odpowiedni algorytm uczenia ze wzmocnieniem.
 Ostatecznym celem działania algorytmu jest uzyskanie takich informacji w strukturze $Q(S, A)$, aby robot korzystając z polityki optymalnej (tzn. takiej, w której agent wybiera zawsze najlepszą według niego akcję) wykonał cel z jak najlepszym wynikiem.
 
-TODO PRZYKŁADOWA REPREZENTACJA
+W programie zaimplementowana jest funkcja drukowania wyników symulacji do arkusza kalkulacyjnego, przykładowy wpis 
+zaprezentowany jest na rys. \ref{fig:przykladowywpis}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{przykladowywpis}
+    \caption{Przykładowy wynik działania algorytmu Q-learning. Można zauważyć, że do każdego stanu przydzielone są 
+akcję wraz z wartością skumulowanej nagrody wyliczonej za pomocą algorytmu.}
+    \label{fig:przykladowywpis}
+\end{figure}
+
+Na rys. \ref{fig:wyjasnieniewpisu} przedstawiono znaczenie symboli w pojedynczym wpisie.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{wyjasnieniewpisu}
+    \caption{Liczba w samym środku reprezentuje numer stanu. Bezpośrednią z nią sąsiadujące są typy obiektów, 
+\textbf{B}order - granica, \textbf{O}stacle - przeszkoda, \textbf{E}mpty - puste pole, \textbf{P}rize - nagroda (stan 
+końcowy)
+    \label{fig:wyjasnieniewpisu}
+\end{figure}
+
 
 \section{Polityka wyboru akcji}
 \label{sec:politykawyboru}
 
-Agent mając do dyspozycji jedną z możliwych akcji $a$ ze zbiory wszystkich akcji $A$, musi podjąć decyzje, która akcję ma wybrać jako następną. W tej implementacji rozważane są dwie polityki
+Agent mając do dyspozycji jedną z możliwych akcji $a$ ze zbioru wszystkich akcji $A$, musi podjąć decyzje, która akcję 
+ma wybrać jako następną. W tej implementacji rozważane są dwie polityki
 \begin{enumerate}
 	\item $\epsilon$-greedy policy
 	\item optimal policy
@@ -52,16 +75,16 @@ Agent porusza się na dwuwymiarowej przestrzeni o wymiarach $50*50$ pikseli.
 
 Przykładowy stan środowiska w symulacji przedstawiono na rys. \ref{fig:symulacja}, \ref{fig:symulacja2}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{symulacja}
+    \includegraphics[scale=0.6]{symulacja}
     \caption{Przykładowy stan symulacji}
     \label{fig:symulacja}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{symulacja2}
+    \includegraphics[scale=0.6]{symulacja2}
     \caption{Przykładowy stan symulacji}
     \label{fig:symulacja2}
 \end{figure}
@@ -141,25 +164,126 @@ akcji:
 Agent \textbf{nie może} przemieścić się na granicę, w związku z czym w przypadku sąsiedztwa z granicą, robot posiada 
 ograniczony zakres ruchów. 
 
+\subsection{Wartość nagród}
+
+Algorytm, aby wiedzieć czy akcja, którą wykonał jest korzystna czy nie musi otrzymywać nagrodę. W zaimplementowanym 
+środowisku robot dostaje ujemną nagrodę o wartości(-1) po wykonaniu jakiegokolwiek ruchu na puste pole. Dzięki temu 
+zabiegowi agent stara się jak najszybciej dojść do celu, wykonując jak najmniejszą liczbę ruchów. Aby utrudnić 
+dojście do celu agentowi, wprowadzono ujemną nagrodę o wartości -200 po kontakcie z przeszkodą. Robot dąży do 
+odnalezienia takiej drogi, która nie przebiega przez przeszkody. Za dojście do celu uzyskuje pozytywny sygnał o wartości 
+1000.
+
+Początkowo takie rozwiązanie wydawało się działać prawidłowo, jednak miało jedną poważną wadę. Agent bardzo długi czas 
+spędzał w początkowych etapach symulacji, nie wiedząc w która stronę powinien się udać, aby dojść do celu. Dlatego 
+wprowadzono pozytywną nagrodę o wartości 2, za każdy ruch w stronę nagrody.
+
 \subsection{Wybór algorytmów}
 \label{subsec:wyboralgorytmow}
 
 Do implementacji inteligentnego zachowania agenta, wybrano algorytm Q-learning z dziedziny uczenia ze wzmocnieniem.
+Wartość parametrów:
+\begin{itemize}
+ \item discount factor: 0.7
+ \item learning rate: 0.6
+ \item $\epsilon$: 0.2
+\end{itemize}
+
+Na listingu \ref{lst:qlearning} przedstawiono implementację algorytmu Q-learning.
+
+\lstset{language=Java,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{gray}\ttfamily,
+	morecomment=[l][\color{magenta}]{\#}
+	frame=single, % adds a frame around the code
+	tabsize=2, % sets default tabsize to 2 spaces
+	breaklines=true, % sets automatic line breaking
+}
+\begin{lstlisting}[caption=Implementacja algorytmu Q-learning, label={lst:qlearning}, captionpos=b, 
+belowcaptionskip=4pt]
+
+        State currentState, nextState;
+        Action currentAction;
+
+//        lowers discount factor after an arbitrary amount of time
+        if(renderTimer % 1000 == 0 && discountFactor > 0){
+            System.out.println("lowering discountFactor");
+            discountFactor -= 0.1d;
+        }
+
+        if(renderTimer % threshold == 0){
+
+//            start out in an initial state as the current state
+            currentState = State.identifyState(agent.getX(), agent.getY(), 
+Environment.getInstance().getEnvironmentState());
+            List<Action> currentlyPossibleActions = new ArrayList<>(qValues.get(currentState).keySet());
+
+//            select one among all possible actions for the current state
+//            epsilon-greedy policy takes random action once in a while, otherwise chooses the best one
+            double d = Math.random();
+            if (d > epsilon){
+
+//                get best action for current state
+                double Qmax = qValues.get(currentState).get(currentlyPossibleActions.get(0));
+                Action bestAction = null;
+
+                for(Map.Entry<Action, Float> actionEntry : qValues.get(currentState).entrySet()){
+                    if(actionEntry.getValue() >= Qmax){
+                        Qmax = actionEntry.getValue();
+                        bestAction = actionEntry.getKey();
+                    }
+                }
+                if(bestAction == null){
+                    for(Map.Entry<Action, Float> actionEntry : qValues.get(currentState).entrySet())
+                        System.out.println(actionEntry);
+                    throw new NullPointerException("Empty action!");
+                }
+                currentAction = bestAction;
+            }
+            else {
+//                random action
+                currentAction = currentlyPossibleActions.get(ThreadLocalRandom.current().nextInt(0, 
+currentlyPossibleActions.size()));
+            }
+
+//            consider transitioning to state, after executing current action
+            nextState = State.considerNextState(currentAction, agent.getX(), agent.getY());
+
+//            find qMax for nextState
+            float Qmax = 0;
+
+            for(Map.Entry<Action, Float> actionEntry : qValues.get(nextState).entrySet()){
+                if(actionEntry.getValue() > Qmax){
+                    Qmax = actionEntry.getValue();
+                }
+            }
+
+//            get the reward for the (current state, current action, next state) tuple
+            float reward = agent.returnReward(currentState, currentAction, agent.getX(), agent.getY());
 
 
+//            update Q value
+            float currentStateQValue = qValues.get(currentState).get(currentAction);
+            float qValue = currentStateQValue + learningRate *(reward + discountFactor *Qmax - currentStateQValue);
+            qValues.get(currentState).put(currentAction, qValue);
 
-\subsubsection{Q-learning}
-\label{subsubsec:qlearning}
 
-Algorytm Q-learning \cite{watkins1992q} jest off-policy
+//            set current state to next state
+            currentState = nextState;
 
-\subsubsection{SARSA}
-\label{subsubsec:sarsa}
+            agent.move(currentAction, Gdx.graphics.getDeltaTime());
+            timeStep++;
+
+            return reward;
+\end{lstlisting}
 
 \section{Wykorzystane technologie}
 \label{sec:wykorzystanetechnologie}
 
 Java 8 kod został napisany w języku Java. Do generowania grafiki została wykorzystana biblioteka LibGDX. W celu notowania wyników do plików kalkulacyjnych została wykorzystana biblioteka Apache POI.
+W celu zmniejszenia ilości kodu użyto biblioteki Project Lombok, pozwalającej na automatyczne generowane getterów, 
+setterów, konstruktorów lub metod hashcode i equals. Do budowania i zarządzania projektem wykorzystano narzędzie Gradle.
 
 \section{Napotkane problemy}
 \label{sec:napotkaneproblemy}
@@ -167,11 +291,63 @@ Java 8 kod został napisany w języku Java. Do generowania grafiki została wyko
 Przy projektowaniu aplikacji, największy problem stanowiło odpowiednie przedstawienie aktualnego stanu środowiska i robota. Nieodpowiednie odwzorowanie stanu, może powodować niepoprawną naukę agenta.
 Zakładając rozmiar mapy $50*50$, można zauważyć, że przy naiwnej reprezentacji stanu, tzn. takiej, w której każda możliwa kombinacja stanu mapy jest reprezentowana osobno, powstaje ogromna ilość możliwych akcji w tablicy wartości $Q(S,A)$ 
 Ostatecznie postanowiono przedstawić stan w postaci siatki $3*3$.
-Reprezentacja stanu
-Testowanie działania algorytmów
+
+Kolejnym problemem, który napotkano przy implementacji działania algorytmów jest ich testowanie. Algorytmy uczenia ze 
+wzmocnieniem są niełatwymi metodami do testowania, niepoprawność działania agenta może wynikać z wielu różnych błędów 
+implementacji, jak również z niepoprawnego modelu środowiska czy reprezentacji stanu. Negatywnie na 
+działanie robota wpływają też nieodpowiednio dobrane parametry implementacji lub polityki.
+
+\section{Obsługa symulacji}
+
+Do obsługi symulacji zostały zaimplementowane następujące funkcje:
+\begin{itemize}
+ \item Spowolnienie symulacji - wciskając przycisk $-$, można spowolnić działanie symulacji
+ \item Przyspieszenie symulacji - wciskając przycisk $+$, można przyspieszyć działanie symulacji
+ \item Zresetowanie symulacji - klawisz $ENTER$ służy do resetowania symulacji
+ \item Zmiana polityki robota - używając przycisku $p$, można sterować polityką robota wybierając pomiędzy 
+$\epsilon$-greedy, a optimal policy
+\end{itemize}
+
 
 \section{Wynik działania}
 \label{sec:wynikdzialania}
+
+Algorytm z łatwością poradził sobie z wyznaczeniem najkrótszej, najbardziej korzystnej drogi w 
+zaprojektowanym środowisku. Po niedługim procesie nauki, robot generuje skuteczną tablice wartości $Q(S, A)$.
+Jako, że zaimplementowany został algorytm off-policy Q-learning, można zaobserwować brak wpływu nauczania na politykę 
+wybierania akcji. Pomimo to, że agent znalazł już satysfakcjonujące rozwiązanie to nadal jest zaangażowany w eksploracje 
+nowych stanów. Gdyby wykorzystano algorytm on-policy SARSA, robot pod wpływem uzyskanych wyników zmienił by strategię 
+wyboru kolejnych akcji, wykorzystując politykę optymalną. Przykładowe wyniki przedstawiono na rys. \ref{fig:wynik1}, 
+\ref{fig:wynik2} i \ref{fig:wynik3}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{wynik1}
+    \caption{Przykładowy wynik działania algorytmu. Można zaobserwować poprawnie wyznaczone wartości akcji. Nagroda 
+znajduje się w lewym górnym rogu mapy, dlatego też nie opłaca się agentowi wykonać akcję w przeciwnym kierunku. Agent 
+jeżeli ma taką możliwość wykonuje ruch w takich stan, żeby nie znaleźć się na przeszkodzie}
+    \label{fig:wynik1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{wynik2}
+    \caption{Przykładowy wynik działania algorytmu. Podobnie jak na obrazku wyżej, agent wykonuje podobne wybory. Można 
+zauważyć, że agent znajdując się wewnątrz przeszkody (stan nr. 15), każdy ruch uważa za niekorzystny ale jednak z 
+delikatną przewagą do góry lub w lewo (w kierunku nagrody). W przypadku, gdy agent graniczy z lewej strony z przeszkodą 
+jak w stanie nr. 16, niedostępna jest akcja MOVE LEFT}
+    \label{fig:wynik2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{wynik3}
+    \caption{Przykładowy wynik działania algorytmu. Na tym obrazku widać stan nr. 68, w którym agent nigdy się nie 
+znalazł. Jest to logiczna konsekwencja tego, że nagroda (stan końcowy) znajduje się w lewym górnym obszarze mapy, a 
+więc nie może sąsiadować z granicą od dołu}
+    \label{fig:wynik3}
+\end{figure}
+
 
 
 %---------------------------------------------------------------------------
