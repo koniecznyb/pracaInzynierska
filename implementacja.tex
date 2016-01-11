@@ -16,6 +16,33 @@ największą nagrodę. \\
 poprzednio dokonanych wyborów, buduje tablicę mapującą stan-akcja $Q(S, A)$ do konkretnej wyliczonej wartości. W 
 programie do przedstawienia wartości tablicy stan-akcja $Q(S, A)$ wykorzystano wielowymiarową tablicę.
 
+\section{Tablica stan-akcja $Q(S, A)$}
+
+Tablica $Q(S, A)$ jest to struktura danych przechowująca wszystkie stany i możliwe do wykonania w nich akcje. Każdej z tych akcji przyporządkowana jest odpowiednia wartość, która jest poddawana modyfikacji przez odpowiedni algorytm uczenia ze wzmocnieniem.
+Ostatecznym celem działania algorytmu jest uzyskanie takich informacji w strukturze $Q(S, A)$, aby robot korzystając z polityki optymalnej (tzn. takiej, w której agent wybiera zawsze najlepszą według niego akcję) wykonał cel z jak najlepszym wynikiem.
+
+TODO PRZYKŁADOWA REPREZENTACJA
+
+\section{Polityka wyboru akcji}
+\label{sec:politykawyboru}
+
+Agent mając do dyspozycji jedną z możliwych akcji $a$ ze zbiory wszystkich akcji $A$, musi podjąć decyzje, która akcję ma wybrać jako następną. W tej implementacji rozważane są dwie polityki
+\begin{enumerate}
+	\item $\epsilon$-greedy policy
+	\item optimal policy
+\end{enumerate}
+
+\subsection{Równowaga pomiędzy eksploracją, a eksploatacją}
+Od wyboru polityki zależy stopień eksploracji algorytmu. Gdyby agent za każdym razem wybierał najbardziej korzystną według niego akcję, byłby podatny na zakleszczenie w nieoptymalnym rozwiązaniu. Wprowadzając pewną losowość wyboru akcji agent, będzie w stanie odkryć nowe rozwiązania, nawet jeżeli według jego aktualnej wiedzy znalazł to najbardziej optymalne. Powstało dużo prac dokładniej badających to zagadnienie \ref{thrun1992efficient}, \ref{wiewiora2004efficient}.
+
+\subsection{$\epsilon$-greedy policy}
+
+Polityka $\epsilon$-greedy jest strategią wyboru akcji polegającą na wyborze losowej akcji z prawdopodobieństwem $\epsilon$, a w przeciwnym wypadku wybranie najbardziej korzystnej. Agent wybiera akcję, która według niego będzie najbardziej korzystna z prawdopodobieństwem $1-\epsilon$, a w przeciwnym wypadku wykonuje akcję losową. Parametr $\epsilon$ jest regulowany zależnie od potrzeb i musi spełniać zależność $0 < \epsilon < 1$.
+
+\subsection{Optimal policy}
+
+Polityka optymalna, agent za każdym razem wybiera najkorzystniejszą według jego wiedzy akcję.
+
 \section{Symulacja graficzna}
 \label{sec:symulacjagraficzna}
 
@@ -124,6 +151,8 @@ Do implementacji inteligentnego zachowania agenta, wybrano algorytm Q-learning z
 \subsubsection{Q-learning}
 \label{subsubsec:qlearning}
 
+Algorytm Q-learning \cite{watkins1992q} jest off-policy
+
 \subsubsection{SARSA}
 \label{subsubsec:sarsa}
 
@@ -135,6 +164,9 @@ Java 8 kod został napisany w języku Java. Do generowania grafiki została wyko
 \section{Napotkane problemy}
 \label{sec:napotkaneproblemy}
 
+Przy projektowaniu aplikacji, największy problem stanowiło odpowiednie przedstawienie aktualnego stanu środowiska i robota. Nieodpowiednie odwzorowanie stanu, może powodować niepoprawną naukę agenta.
+Zakładając rozmiar mapy $50*50$, można zauważyć, że przy naiwnej reprezentacji stanu, tzn. takiej, w której każda możliwa kombinacja stanu mapy jest reprezentowana osobno, powstaje ogromna ilość możliwych akcji w tablicy wartości $Q(S,A)$ 
+Ostatecznie postanowiono przedstawić stan w postaci siatki $3*3$.
 Reprezentacja stanu
 Testowanie działania algorytmów
 
